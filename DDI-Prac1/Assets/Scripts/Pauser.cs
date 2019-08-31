@@ -40,10 +40,4 @@ public class Pauser: MonoBehaviour {
 
 	}
 
-	/* 
-	add:
-	pause music
-	reiniciar partida */
-
-	/* research about load scene */
 }

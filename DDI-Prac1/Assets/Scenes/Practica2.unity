@@ -605,31 +605,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: be08427ce851e4edb9fb26bdfba08349, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.194393
+      value: 183.94202
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: be08427ce851e4edb9fb26bdfba08349, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.100224
+      value: -14.100048
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: be08427ce851e4edb9fb26bdfba08349, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -432.18222
+      value: -384.24783
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: be08427ce851e4edb9fb26bdfba08349, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00000051398865
+      value: -0.0000012072331
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: be08427ce851e4edb9fb26bdfba08349, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9588305
+      value: 0.74506956
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: be08427ce851e4edb9fb26bdfba08349, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000017354822
+      value: -0.000001348581
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: be08427ce851e4edb9fb26bdfba08349, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.2839794
+      value: 0.66698676
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: be08427ce851e4edb9fb26bdfba08349, type: 3}
       propertyPath: m_RootOrder
@@ -641,7 +641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: be08427ce851e4edb9fb26bdfba08349, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 147.00401
+      value: 96.33
       objectReference: {fileID: 0}
     - target: {fileID: 400122, guid: be08427ce851e4edb9fb26bdfba08349, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

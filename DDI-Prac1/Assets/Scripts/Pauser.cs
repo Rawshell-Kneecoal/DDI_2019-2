@@ -24,6 +24,7 @@ public class Pauser: MonoBehaviour {
 		}
 
 		if (paused) {
+			Cursor.visible = true;
 			Time.timeScale = 0;
 			pauseMenu.SetActive(true);
 

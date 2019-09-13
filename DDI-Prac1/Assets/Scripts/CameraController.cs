@@ -10,6 +10,7 @@ public class CameraController: MonoBehaviour {
 
     [Range(1, 10)]
 
+    /* Rotation speed has to also be modified in the inspector, to the main camera (in this case) */
     public float rotationSpeed = 1f; // refresh rate -> 1 unidad por segundo
 
     public Vector2 limitY = new Vector2(-30, 30);

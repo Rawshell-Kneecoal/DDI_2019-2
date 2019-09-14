@@ -4,28 +4,8 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour 
 {
-	public Color newColor;
-	public GameObject infoCanvas;
-	Renderer rend;
 	bool isInsideZone;
-
-	/// <summary>
-	/// Awake is called when the script instance is being loaded.
-	/// </summary>
-	protected virtual void Awake()
-	{
-		rend = GetComponent<Renderer>();
-	}
-
-	/// <summary>
-	/// Start is called on the frame when a script is enabled just before
-	/// any of the Update methods is called the first time.
-	/// </summary>
-	void Start()
-	{
-		infoCanvas.SetActive(false);
-	}
-
+	public KeyCode interactionKey = KeyCode.I;
 	/// <summary>
 	/// Update is called every frame, if the MonoBehaviour is enabled.
 	/// </summary>
@@ -33,7 +13,7 @@ public class Interactable : MonoBehaviour
 	{
 		if(isInsideZone)
 		{
-			if(Input.GetKeyDown(KeyCode.C))
+			if(Input.GetKeyDown(interactionKey))
 			{
 				Interact();
 			}
@@ -51,7 +31,6 @@ public class Interactable : MonoBehaviour
 		// Debug.Log("Entraste en la esfera!");
 		// rend.material.color = newColor;
 		isInsideZone = true;
-		infoCanvas.SetActive(true);
 	}
 
 	/// <summary>
@@ -60,12 +39,11 @@ public class Interactable : MonoBehaviour
 	/// <param name="other">The other Collider involved in this collision.</param>
 	void OnTriggerExit(Collider other)
 	{
-		infoCanvas.SetActive(false);
 		isInsideZone = false;
 	}
 
 	public virtual void Interact()
 	{
-		rend.material.color = newColor;
+
 	}
 }

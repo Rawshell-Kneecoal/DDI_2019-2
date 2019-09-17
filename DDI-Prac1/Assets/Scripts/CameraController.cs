@@ -32,6 +32,6 @@ public class CameraController: MonoBehaviour {
         cameraTarget.rotation = Quaternion.Euler(mouseY, mouseY, 0);
         transform.LookAt(cameraTarget);
 
-        Debug.Log("Mouse X = "+ mouseX + " Mouse Y = " + mouseY);
+        /* Debug.Log("Mouse X = "+ mouseX + " Mouse Y = " + mouseY); */
     }
 }

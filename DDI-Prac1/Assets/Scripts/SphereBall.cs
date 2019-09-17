@@ -20,5 +20,6 @@ public class SphereBall : Interactable
 	{
 		Debug.Log("SphereBall");
 		rb.AddForce(kickDirection * kickForce, ForceMode.Force);
+		Debug.Log("Interacting");
 	}
 }

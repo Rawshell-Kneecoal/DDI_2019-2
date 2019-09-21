@@ -16,6 +16,7 @@ TagManager:
   - Flowers
   - Coin
   - Console
+  - Campfire
   layers:
   - Default
   - TransparentFX

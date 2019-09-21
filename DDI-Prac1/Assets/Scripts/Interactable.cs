@@ -7,11 +7,17 @@ public class Interactable: MonoBehaviour {
 	public float xAngle, yAngle, zAngle;
 	private bool rotateFlower = false;
 	private bool rotateCoin = false;
+	private bool consolePlayAudio = false;
 	public Color newColor = Color.green;
 	public GameObject infoCanvas;
 	Renderer rend;
 	bool isInsideZone;
 	public AudioSource audioData;
+
+	public GameObject fireEffect;
+	public GameObject fireRotateEffect;
+	
+
 
 
 	/// <summary>
@@ -26,7 +32,10 @@ public class Interactable: MonoBehaviour {
 	void Start() {
 		infoCanvas.SetActive(false);
 
-		audioData = GetComponent<AudioSource>();
+		fireEffect.SetActive(false);
+		fireRotateEffect.SetActive(false);
+	
+		//audioData = GetComponent<AudioSource>();
 		/* audioData.Pause(0); */
         /* audioData.Play(0);
         Debug.Log("started"); */
@@ -49,8 +58,6 @@ public class Interactable: MonoBehaviour {
 
 		if(rotateCoin) {
 			gameObject.transform.Rotate(Vector3.up, Space.Self);
-			/* PlayMusic(); */
-			audioData.Play(0);
 			
 		}
 	}
@@ -70,6 +77,15 @@ public class Interactable: MonoBehaviour {
 	void OnTriggerExit(Collider other) {
 		infoCanvas.SetActive(false);
 		isInsideZone = false;
+
+		if(gameObject.tag == "Console") {
+			audioData.Stop();
+		}
+		if(gameObject.tag == "Campfire") {
+			fireEffect.SetActive(false);
+			fireRotateEffect.SetActive(false);
+		}
+
 	}
 
 	public virtual void Interact() {
@@ -82,13 +98,20 @@ public class Interactable: MonoBehaviour {
 
 				break;
 			case "Console":
-				rend.material.color = Color.cyan;
+				// rend.material.color = Color.cyan;
+				audioData.Play(); 
+				/* consolePlayAudio = !consolePlayAudio; */
+
 				break;
 			case "Coin":
 				rend.material.color = Color.white;
 				rotateCoin = !rotateCoin;
 				
 				/* Destroy(gameObject); */
+				break;
+			case "Campfire":
+				fireEffect.SetActive(true);
+				fireRotateEffect.SetActive(true);
 				break;
 			default:
 				break;

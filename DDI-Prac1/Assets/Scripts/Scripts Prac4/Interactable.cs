@@ -1,11 +1,13 @@
 ﻿/* using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Interactable : MonoBehaviour 
 {
 	bool isInsideZone;
 	public KeyCode interactionKey = KeyCode.I;
+	public string buttonName = "Interact"; // for android interface, added september 19
 	/// <summary>
 	/// Update is called every frame, if the MonoBehaviour is enabled.
 	/// </summary>
@@ -13,7 +15,14 @@ public class Interactable : MonoBehaviour
 	{
 		if(isInsideZone)
 		{
-			if(Input.GetKeyDown(interactionKey))
+			// if(Input.GetButtonDown("Jump")){
+				// Debug.Log("jump"); // i think this is wrong
+			// }
+			if(CrossPlatformInputManager.GetButtonDown("Jump")){
+				Debug.Log("jump");
+			}
+			// if(Input.GetKeyDown(interactionKey)) // commented sept19
+			if(CrossPlatformInputManager.GetButtonDown(buttonName))
 			{
 				Interact();
 			}

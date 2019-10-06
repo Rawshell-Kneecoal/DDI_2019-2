@@ -6,16 +6,21 @@ public class Inventory : MonoBehaviour
 {
 	public delegate void OnItemChange();
 	public OnItemChange onItemChange;
-	public int space = 10;
+	public int space = 15;
 	public List<Item> items = new List<Item>();
 
 	public void Add(Item item)
-	{
+	{	
+		space = 15;
 		if (items.Count < space)
 		{
+			Debug.Log("This is space: "+space+", and this is item count: "+items.Count);
 			items.Add(item);
+			Debug.Log("just added item to inventory");
 			if(onItemChange != null)
 			{
+				Debug.Log("in line onItemChange.Invoke(); ");
+
 				onItemChange.Invoke();
 			}
 		}

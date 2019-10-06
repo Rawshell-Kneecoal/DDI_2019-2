@@ -13,13 +13,16 @@ public class InventoryUI : MonoBehaviour
 	/// </summary>
 	void Start()
 	{
+		inventoryPanel.SetActive(false);
+		Debug.Log("init value of inventory panel setactive is: " + inventoryPanel.activeSelf);
+
 		inventory = FindObjectOfType<Inventory>();
 		if (inventory == null)
 		{
 			Debug.LogWarning("No se encontró el Inventario");
 			return;
 		} 
-		inventoryPanel.SetActive(false);
+		
 		inventory.onItemChange += UpdateUI;
 	}
 
@@ -28,10 +31,12 @@ public class InventoryUI : MonoBehaviour
 	/// </summary>
 	void Update()
 	{
+		/* Debug.Log("in update!"); */
 		if(Input.GetKeyDown(KeyCode.Q))
 		{
-			Debug.Log("UI Off");
+			/* Debug.Log("UI Off"); */
 			inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+			Debug.Log("inventoryPanel.activeself is: " + inventoryPanel.activeSelf);
 			UpdateUI();
 			Cursor.visible = inventoryPanel.activeSelf;
 			Cursor.lockState = inventoryPanel.activeSelf ? CursorLockMode.None : CursorLockMode.Locked;

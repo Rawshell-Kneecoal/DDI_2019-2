@@ -32,9 +32,13 @@ public class Interactable: MonoBehaviour {
 	void Start() {
 		infoCanvas.SetActive(false);
 
-		fireEffect.SetActive(false);
-		fireRotateEffect.SetActive(false);
-	
+		if(fireEffect) {
+			fireEffect.SetActive(false);
+			fireRotateEffect.SetActive(false);	
+		}
+		
+		
+
 		//audioData = GetComponent<AudioSource>();
 		/* audioData.Pause(0); */
         /* audioData.Play(0);
